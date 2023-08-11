@@ -20,14 +20,14 @@ def mostrar_mascotas_vendidas(mascotas):
     print("Lista de mascotas vendidas:")
     for mascota in mascotas:
         raza, precio, tipo_pago = mascota
-        print("Raza: {}, Precio: {}, Tipo de pago: {}".format(raza, precio, tipo_pago))
+        print(f"Raza: {raza}, Precio: {precio}, Tipo de pago: {tipo_pago}")
 
 def guardar_mascotas_en_archivo(mascotas):
     try:
         with open("mascotas.txt", "w") as archivo:
             for mascota in mascotas:
                 raza, precio, tipo_pago = mascota
-                archivo.write("{},{},{}\n".format(raza, precio, tipo_pago))
+                archivo.write(f"{raza},{precio},{tipo_pago}\n")
         print("Datos de mascotas guardados correctamente.")
     except IOError:
         print("Error al guardar los datos de mascotas en el archivo.")
